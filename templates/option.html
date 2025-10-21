@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='option.css')}}">
+    <title>Option</title>
+    <script src="{{ url_for('static', filename='option.js') }}"></script>
+</head>
+<body>
+    <div class="options">
+        <div class="box" id="Normal" data-url="{{ url_for('index') }}">View Normal</div>
+        {% if ExtraRights %}
+        <div class="box" id="Advanced" data-url="{{ url_for('Control') }}">View Advanced</div>
+        {% endif %}
+    </div>
+</body>
+</html>

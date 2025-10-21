@@ -1,0 +1,48 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6; /* A light, neutral background */
+    color: #333;
+}
+#credit{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #333;
+}
+table {
+    width: 100%; /* Make the table take up the full width of its container */
+    border-collapse: collapse; /* Remove the space between cell borders */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    border-radius: 8px; /* Give the table rounded corners */
+    overflow: hidden; /* Ensures the corner radius clips the content */
+}
+
+th {
+    background-color: #005a78; 
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase; 
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #dddddd; 
+    color: #555;
+}
+
+#btn{
+    background-color: azure;
+    color: black;
+    box-shadow: none;
+    font-style: bold;
+    align-self: center;
+    position:relative;
+    font-size: 18px;
+    width: 160px;
+    height: 40px;
+}

@@ -1,0 +1,36 @@
+.overview{
+    flex: auto;
+    align-self: center;  
+}
+#btn{
+    background-color: azure;
+    color: black;
+    box-shadow: none;
+    font-style: bold;
+    align-self: center;
+    position:relative;
+    font-size: 18px;
+    width: 160px;
+    height: 40px;
+}
+#addbtn:hover{
+    background-color: green;
+    color: black;
+    box-shadow: none;
+    font-style: bold;
+    position:relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+#delbtn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #dc3545; /* A standard red for delete actions */
+    color: white;
+    text-decoration: none; /* Remove the default link underline */
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s;
+}

@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='Manager.css')}}">
+    <title>Manager</title>
+        {% block scripts %}
+    <script src="{{url_for('static',filename='Validation.js')}}"></script>
+        {% endblock %}
+    {% endblock %}
+
+   {% block body %}
+    <form action="" method="post">
+        <hr>
+        <h1>Product Database Entries</h1>
+        <div class="Manager">
+            <table cellpadding="10" cellspacing="10">
+                <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+            <th>Total amount (Price x Qtd)</th>
+            <th>Payment type</th>
+            <th>Order type</th>
+                </tr>
+                <tr>
+                <td><select name="Item" class="dropMenu" id="item">
+                <option value="ITEM" name="ITEM" selected>Item</option>
+                <option>a</option>
+                <option>b</option>
+                <option>c</option>
+            </select>
+        </td>
+        <td><input type="number" placeholder="Product price" name="Prod_price" id="prod_price" onkeyup="calcTotal()"></td>
+        <td><input type="number" placeholder="Product qtd" name="Prod_qtd" id="prod_qtd" onkeyup="calcTotal()"></td>
+        <td><input type="text" placeholder="Total" name="Prod_total" id="prod_total" disabled></td>
+        <td><select name="paymentType" class="dropMenu" id="paymenttype">
+                <option value="Payment type" selected>Payment type</option>
+                <option>Cash</option>
+                <option>Online</option>
+            </select></td>
+        <td><select name="orderType" class="dropMenu" id="ordertype">
+                <option value="Order Type" name="Order type" selected>Order type</option>
+                <option name="Normal">Normal</option>
+                <option name="Custom">Custom</option>
+            </select></td>
+        </tr>
+            <tr>
+                <td><input type="submit" id="btn" value="Add Entry" name="Submit" onclick="checkMissingField()"></td>
+                
+                <td><a href="{{url_for('credits')}}"><input type="button" id="btn" value="Credits" name="credits"/></a></td>
+            </tr>
+            </table>
+        </div>
+        <br>
+        </form>
+    {{ super() }}
+    {% endblock %}
+    <!--This super block renders parent document here -->
+</html>

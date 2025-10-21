@@ -1,0 +1,54 @@
+<!-- This html will be inherited to prod_details_manipulate-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='homepage.css')}}">
+    <title>Product details</title>
+    {% block head %}{% endblock %}
+    {% block scripts %}{% endblock %}
+</head>
+<body>
+    {% block body %}
+    <h1>View: {{Entity}}</h1>
+    <p><a href="{{ url_for('download') }}"><input type="button" value="Download copy" id="btn"></a></p>
+    <table border="1" cellpadding="10" class="dataTable">
+        <tr>
+            <th>Sr. No</th>
+            <th>Entry date</th>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+            <th>Product Size (cms)</th>
+            <th>Total amount (Price x Qtd)</th>
+            <th>Payment type</th>
+            <th>Order type</th>
+            {% if extra %}
+            <th>Extra</th>
+            {% endif %}
+            
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product[0]}}</td>
+            <td>{{product[1]}}</td>
+            <td>{{product[2]}}</td>
+            <td>{{product[3]}}</td>
+            <td>{{product[4]}}</td>
+            <td>{{product[5]}}</td>
+            <td>{{product[6]}}</td>
+            <td>{{product[7]}}</td>
+            <td>{{product[8]}}</td>
+            <td>{{product[9]}}</td>
+            {% if extra %}
+            <td><a href="{{url_for('DeletePage',SR_no=product[0])}}" id="delbtn">Delete</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        
+    </table>
+    {% endblock %}
+</body>
+</html>

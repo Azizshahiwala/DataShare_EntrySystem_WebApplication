@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+    <title>Login</title>
+</head>
+<body>
+    <form method="post">
+        <div class="loginpage">
+            <div id="pass">
+                <label>Enter password:</label>
+                <input type="text" name="password" placeholder="password"/>
+            </div>
+            {% if error %}
+            {{error}}
+            {% endif %}
+            <br>
+            <input type="submit" value="login" name="login" id="gobtn"/>
+        </div>
+    </form>
+</body>
+</html>
